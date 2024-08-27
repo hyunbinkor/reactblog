@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
-
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
     // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
@@ -9,7 +8,6 @@
     // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects. */
     // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
     // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
-
     /* Language and Environment */
     "target": "es2023" /* 2023년 Javascript 문법에 맞게 컴파일하도록 설정 */,
     "lib": [
@@ -17,7 +15,7 @@
       "DOM",
       "DOM.Iterable"
     ] /* 컴파일에 포함될 라이브러리 목록. ES2023의 JS, DOM 라이브러리, DOM 순회를 위한 라이브러리 */,
-    "jsx": "react-jsx" /* jsx 확장자 파일이 어떤 식으로 변환될 것인지를 지정. react-jsx는 React 17 이후의 몇 가지 변경점을 포함. */,
+    "jsx": "preserve" /* jsx 확장자 파일이 어떤 식으로 변환될 것인지를 지정. react-jsx는 React 17 이후의 몇 가지 변경점을 포함. */,
     // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
     // "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'. */
@@ -27,19 +25,23 @@
     // "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
     // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
     // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
-
     /* Modules */
     "module": "Node16" /* Node16의 모듈 시스템을 따르도록 설정. (ECMA와 CommonJS를 포용) */,
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     "moduleResolution": "Node16" /* 모듈 해석 알고리즘을 Node16에 맞추도록 설정 */,
     "baseUrl": "src" /* 상대 경로 기반의 모듈 경로 설정을 폐기하고, 절대 경로만으로 변경하며 그 root를 설정 */,
     "paths": {
-      "@/*": ["*"],
-      "@components/*": ["components/*"]
+      "@/*": [
+        "*"
+      ],
+      "@components/*": [
+        "components/*"
+      ]
     } /* baseUrl을 사용시에 몇몇 경로를 단축어로 지정해두는 것 */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-
-    "typeRoots": ["@/assets"] /* assets 폴더를 모듈화 */,
+    "typeRoots": [
+      "@/assets"
+    ] /* assets 폴더를 모듈화 */,
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
@@ -50,12 +52,10 @@
     "resolveJsonModule": true /* JSON을 모듈처럼 불러올 수 있도록 허용 */,
     // "allowArbitraryExtensions": true,                 /* Enable importing files with any extension, provided a declaration file is present. */
     // "noResolve": true,                                /* Disallow 'import's, 'require's or '<reference>'s from expanding the number of files TypeScript should add to a project. */
-
     /* JavaScript Support */
     "allowJs": true /* webpack 설정 파일 등 일부 js 확장자를 용인하기 위한 설정 */,
     // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
     // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
-
     /* Emit */
     // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
@@ -78,7 +78,6 @@
     // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
     // "preserveConstEnums": true,                       /* Disable erasing 'const enum' declarations in generated code. */
     // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
-
     /* Interop Constraints */
     "isolatedModules": true /* 다른 transpiler들이 대체로 하나의 파일씩 작업을 하기에, 독립된 모듈 파일로 생성하여 타 transpiler 동작에 문제가 없도록 함. */,
     // "verbatimModuleSyntax": true,                     /* Do not transform or elide any imports or exports not marked as type-only, ensuring they are written in the output file's format based on the 'module' setting. */
@@ -87,7 +86,6 @@
     "esModuleInterop": true /* CommonJS 기반으로 export 된 모듈들(라이브러리 등)을 ES식 import로 가져오기 위함. -> 추후 webpack에서 처리를 함 */,
     // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
     "forceConsistentCasingInFileNames": true /* 파일 트리에서 탐색할 때 대소문자 구분에 대해 에러를 발생시킬도록 */,
-
     /* Type Checking */
     "strict": true /* 더 깐깐한 기준으로 type 검사를 하도록. (정확히는 ts 버전마다 상이) */,
     // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
@@ -108,11 +106,22 @@
     // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type. */
     // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
     // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
-
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true /* ts 문법 확인을 라이브러리 파일들에 대해 건너뛰기 */
+    "skipLibCheck": true /* ts 문법 확인을 라이브러리 파일들에 대해 건너뛰기 */,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src"] /* 어떤 경로의 파일들을 컴파일 할 것인지? */,
-  "exclude": ["node_modules", "dist"] /* 특정 경로의 파일들을 컴파일 하지 않도록 예외처리 */
+  "include": [
+    "src",
+    ".next/types/**/*.ts"
+  ] /* 어떤 경로의 파일들을 컴파일 할 것인지? */,
+  "exclude": [
+    "node_modules",
+    "dist"
+  ] /* 특정 경로의 파일들을 컴파일 하지 않도록 예외처리 */
 }
